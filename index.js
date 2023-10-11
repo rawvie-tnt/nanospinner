@@ -100,17 +100,17 @@ function createSpinner(text = '', opts = {}) {
 
     success(opts = {}) {
       let mark = green(symbols.tick)
-      return spinner.stop({ mark, ...opts })
+      return spinner.stop(Object.assign(mark, opts))
     },
 
     error(opts = {}) {
       let mark = red(symbols.cross)
-      return spinner.stop({ mark, ...opts })
+      return spinner.stop(Object.assign(mark, opts))
     },
 
     warn(opts = {}) {
       let mark = yellow(symbols.warn)
-      return spinner.stop({ mark, ...opts })
+      return spinner.stop(Object.assign(mark, opts))
     },
 
     isSpinning() {
